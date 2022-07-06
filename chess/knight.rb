@@ -10,4 +10,8 @@ class Knight < Piece
     def symbol
         :kn
     end
+
+    private
+    def move
+    end
 end

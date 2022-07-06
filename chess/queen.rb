@@ -10,4 +10,8 @@ class Queen < Piece
     def symbol
         :qu
     end
+
+    private
+    def move
+    end
 end

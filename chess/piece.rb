@@ -2,8 +2,8 @@
 
 class Piece
 
-    include Slideable
-    include Steppable
+    # include Slideable
+    # include Steppable
 
     attr_reader = :color, :board, :pos
 
@@ -50,6 +50,8 @@ class Piece
             else
                 return "♟︎"
             end
+        elsif symbol == :nu
+            return '--'
         end
     end
 

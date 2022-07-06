@@ -10,4 +10,8 @@ class Pawn < Piece
     def symbol
         :pa
     end
+
+    private
+    def move
+    end
 end

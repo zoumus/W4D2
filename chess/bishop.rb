@@ -12,4 +12,8 @@ class Bishop < Piece
     def symbol
         :bi
     end
+
+    private
+    def move
+    end
 end

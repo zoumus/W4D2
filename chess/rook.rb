@@ -10,4 +10,8 @@ class Rook < Piece
     def symbol
         :ro
     end
+
+    private
+    def move
+    end
 end

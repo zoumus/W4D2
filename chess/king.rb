@@ -10,4 +10,8 @@ class King < Piece
     def symbol
         :ki
     end
+
+    private
+    def move
+    end
 end

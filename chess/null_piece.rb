@@ -7,6 +7,10 @@ class NullPiece < Piece
     def initialize
     end
 
+    def symbol
+        :nu
+    end
+
     
 
     def empty?
