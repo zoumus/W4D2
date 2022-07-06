@@ -57,6 +57,7 @@ class Board
     def move_piece(start_pos, end_pos)
         start_row, start_col = start_pos
         end_row, end_col = end_pos
+
         if !valid_pos?(start_pos) || !valid_pos?(end_pos)
             raise 'not a valid position'
         end
@@ -65,6 +66,8 @@ class Board
         else
             raise 'there is no piece in there'
         end
+
+        return @grid[start_row][start_col] = @grid[end_row][start_col]
 
     end
 
