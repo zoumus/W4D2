@@ -1,9 +1,10 @@
 require_relative "piece.rb"
-# require_relative "slideable.rb"
+require_relative "slideable.rb"
 
 class Bishop < Piece
-    # include Slideable
-    attr_reader = :color, :board, :pos
+    include Slideable
+    attr_reader = :color, :board
+    attr_accessor :pos
 
     def initialize(color,board,pos)
         super
@@ -15,6 +16,6 @@ class Bishop < Piece
 
     private
     def move
-        digonal(pos)
+        diagonal(pos)
     end
 end
