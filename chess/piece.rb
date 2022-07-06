@@ -1,23 +1,14 @@
+require_relative "king.rb"
+require_relative "rook.rb"
+require_relative "bishop.rb"
+require_relative "knight.rb"
+require_relative "pawn.rb"
+require_relative "queen.rb"
+
 class Piece
     def initialize(color,board,pos)
         @color = color
-        @board = Board.new
+        @board = board
         @pos = []
-    end
-
-    def to_s
-
-    end
-
-    def empty?
-
-    end
-
-    def pos=(val)
-
-    end
-
-    def symbol
-
     end
 end
