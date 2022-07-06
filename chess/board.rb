@@ -1,4 +1,4 @@
-require_relative "piece.rb"
+require_relative "pieces.rb"
 
 class Board
     # include "singleton"
@@ -30,6 +30,7 @@ class Board
                 end
             end
         end
+        @grid
     end
 
     def render
@@ -56,9 +57,11 @@ class Board
     def move_piece(start_pos, end_pos)
         start_row, start_col = start_pos
         end_row, end_col = end_pos
+        if sta
     end
 
     def add_piece(piece,pos)
+
     end
 
 end

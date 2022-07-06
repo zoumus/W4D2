@@ -1,5 +1,4 @@
-require_relative "slideable.rb"
-require_relative "steppable.rb"
+
 
 class Piece
 
