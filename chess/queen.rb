@@ -1,6 +1,8 @@
 require_relative "piece.rb"
-class Queen < Piece
+require_relative "slideable.rb"
 
+class Queen < Piece
+    include Slideable
     attr_reader = :color, :board, :pos
 
     def initialize(color,board,pos)

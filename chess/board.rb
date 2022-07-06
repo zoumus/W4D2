@@ -33,11 +33,11 @@ class Board
         @grid
     end
 
-    # def render
-    #     @grid.each do |arr|
-    #         p arr
-    #      end
-    # end
+    def render
+        @grid.each do |arr|
+            p arr
+         end
+    end
 
     def [](pos)
         row, col = pos
@@ -69,5 +69,5 @@ class Board
     end
 
 end
-a=Board.new
+a = Board.new
 a.render

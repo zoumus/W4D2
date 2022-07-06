@@ -1,5 +1,5 @@
 require_relative "piece.rb"
-# require_relative "slideable.rb"
+require_relative "slideable.rb"
 
 class Bishop < Piece
     # include Slideable
@@ -15,5 +15,6 @@ class Bishop < Piece
 
     private
     def move
+
     end
 end
