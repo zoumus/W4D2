@@ -1,7 +1,7 @@
 require_relative "piece.rb"
 require_relative "steppabble.rb"
 class Knight < Piece
-    # include MyModule
+    include Steppable
     attr_reader = :color, :board, :pos
 
     def initialize(color,board,pos)

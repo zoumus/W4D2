@@ -18,7 +18,6 @@ module Steppable
     end
 
     def move_diffs
-        
         raise   NotImplimentedError
     end
 

@@ -4,7 +4,7 @@ module Slideable
     # VERTICAL_HORIZONTA; = [[0,1], [0,-1], [-1,0], [1,0]]
 
     def horizontal
-        i, j = pos 
+        i, j = pos
         num = 1
         arr = []
         while num < 8
@@ -16,7 +16,7 @@ module Slideable
     end
 
     def diagonal
-        i, j = pos 
+        i, j = pos
         num = 1
         arr = []
         while num < 8
@@ -26,5 +26,10 @@ module Slideable
         end
         return arr
     end
+
+
+    
+
+
 
 end
