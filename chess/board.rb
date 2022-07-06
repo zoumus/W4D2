@@ -18,15 +18,15 @@ class Board
         @grid.each_with_index do |el1, i1|
             @grid.each_with_index do |el2, i2|
                 if i1 == 0
-                    @grid[i1][i2] = last_row[i2].new(:white,self,[i1,i2])
+                    @grid[i1][i2] = last_row[i2].new("white",self,[i1,i2]).to_s
                 elsif i1 == 1
-                    @grid[i1][i2] = many_pawns[i2].new(:white,self,[i1,i2])
+                    @grid[i1][i2] = many_pawns[i2].new("white",self,[i1,i2]).to_s
                 elsif i1 == 7
-                    @grid[i1][i2] = last_row[i2].new(:black,self,[i1,i2])
+                    @grid[i1][i2] = last_row[i2].new("black",self,[i1,i2]).to_s
                 elsif i1 ==6
-                    @grid[i1][i2] = many_pawns[i2].new(:black,self,[i1,i2])
+                    @grid[i1][i2] = many_pawns[i2].new("black",self,[i1,i2]).to_s
                 else
-                    @grid[i1][i2] = @null_piece
+                    @grid[i1][i2] = @null_piece.to_s
                 end
             end
         end
@@ -69,5 +69,5 @@ class Board
     end
 
 end
-p a=Board.new
-
+a=Board.new
+a.render

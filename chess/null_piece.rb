@@ -11,7 +11,6 @@ class NullPiece < Piece
         :nu
     end
 
-    
 
     def empty?
         return true

@@ -15,43 +15,43 @@ class Piece
 
     def to_s
         if symbol == :ki
-            if color == :white
+            if @color == "white"
                 return "♔"
             else
                 return "♚"
             end
         elsif symbol == :bi
-            if color == :white
+            if @color == "white"
                 return "♗"
             else
                 return "♝"
             end
-        elsif symbol == :Kn
-            if color == :white
+        elsif symbol == :kn
+            if @color == "white"
                 return "♘"
             else
                 return "♞"
             end
         elsif symbol == :qu
-            if color == :white
+            if @color == "white"
                 return "♕"
             else
                 return "♛"
             end
         elsif symbol == :ro
-            if color == :white
+            if @color == "white"
                 return "♖"
             else
                 return "♜"
             end
         elsif symbol == :pa
-            if color == :white
+            if @color == "white"
                 return "♙"
             else
                 return "♟︎"
             end
         elsif symbol == :nu
-            return '--'
+            return "-"
         end
     end
 
