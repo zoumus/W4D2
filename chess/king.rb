@@ -13,5 +13,15 @@ class King < Piece
 
     private
     def move
+        i, j = pos 
+        num = 1
+        arr = []
+        positions = possible_pos
+        moves = [
+            [i + num, j + num], [i - num, j - num], [i - num, j + num], [i + num, j - num], 
+            [i + num, j], [i - num, j], [i, j + num], [i, j - num]
+                ]
+        arr.concat(moves.select { |ele| positions.include?(ele) } )
+        return arr
     end
 end

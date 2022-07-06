@@ -13,5 +13,6 @@ class Rook < Piece
 
     private
     def move
+        horizontal
     end
 end

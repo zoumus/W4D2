@@ -15,5 +15,6 @@ class Bishop < Piece
 
     private
     def move
+        digonal(pos)
     end
 end

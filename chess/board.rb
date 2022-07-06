@@ -33,12 +33,6 @@ class Board
         @grid
     end
 
-    # def render
-    #     @grid.each do |arr|
-    #         p arr
-    #      end
-    # end
-
     def [](pos)
         row, col = pos
         grid[row][col]

@@ -13,5 +13,6 @@ class Queen < Piece
 
     private
     def move
+        horizontal || diagonal
     end
 end
