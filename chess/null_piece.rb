@@ -1,6 +1,6 @@
-# require "singleton"
-class Nullpiece < piece
-    
+require "singleton"
+require_relative "piece.rb"
+class NullPiece < Piece
 
     def empty?
         return true
