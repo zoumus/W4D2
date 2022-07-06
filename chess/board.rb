@@ -10,9 +10,8 @@ class Board
     end
 
     def make_grid
-        # first = [1, Knight.new, Bishop.new, King.new, Queen.new, Bishop.new, Knight.new, Rook.new ]
-        # second = [2, Pawn.new, Pawn.new, Pawn.new, Pawn.new, Pawn.new, Pawn.new, Pawn.new]
-        grid[0][0] = Rook.new(white, self, [0,0])
+        
+        grid[0][0] = Rook.new(:white, self, [0,0])
         grid[0][1] = Knight.new(white, self, [0,1])
         grid[0][2] = Bishop.new(white, self, [0,2])
         grid[0][3] = King.new(white, self, [0,3])
