@@ -1,4 +1,5 @@
 require_relative "piece.rb"
+require_relative "null_piece.rb"
 
 class Board
     # include "singleton"
@@ -56,13 +57,17 @@ class Board
     def move_piece(start_pos, end_pos)
         start_row, start_col = start_pos
         end_row, end_col = end_pos
-    end
+        if !valid_pos?(start_pos) || !valid_pos?(end_pos)
+            raise 'not a valid position'
+        end
+        if @grid[start_row][start_col].empty? == true
+            @grid[start_row][start_col], @grid[end_row][end_col] = @grid[end_row][end_col], @grid[start_row][start_col]
+        else
+            raise 'there is no piece in there'
+        end
 
-    def add_piece(piece,pos)
     end
 
 end
+p a=Board.new
 
-a = Board.new
-
-a.render

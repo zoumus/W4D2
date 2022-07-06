@@ -54,18 +54,11 @@ class Piece
         end
     end
 
-
-    end
-
     def empty?
         return false
     end
 
     def pos=(val)
-
-    end
-
-    def symbol
 
     end
 end
