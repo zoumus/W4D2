@@ -1,4 +1,5 @@
-require_relative "null_piece.rb"
+require_relative "piece.rb"
+
 class Board
     # include "singleton"
 
@@ -6,54 +7,29 @@ class Board
 
     def initialize
         @grid = Array.new(8) { Array.new(8) }
-        # @piece = NullPiece.instance
+        @null_piece = NullPiece.instance
+        make_grid
     end
 
     def make_grid
-        
-        grid[0][0] = Rook.new(:white, self, [0,0])
-        grid[0][1] = Knight.new(white, self, [0,1])
-        grid[0][2] = Bishop.new(white, self, [0,2])
-        grid[0][3] = King.new(white, self, [0,3])
-        grid[0][4] = Queen.new(white, self, [0,4])
-        grid[0][5] = Bishop.new(white, self, [0,5])
-        grid[0][6] = Knight.new(white, self, [0,6])
-        grid[0][7] = Rook.new(white, self, [0,7])
+        last_row = [Rook, Knight, Bishop, King, Queen, Bishop, Knight, Rook]
+        many_pawns = [Pawn, Pawn, Pawn, Pawn, Pawn, Pawn, Pawn, Pawn]
 
-        grid[1][0] = Pawn.new(white, self, [1,0])
-        grid[1][1] = Pawn.new(white, self, [1,1])
-        grid[1][2] = Pawn.new(white, self, [1,2])
-        grid[1][3] = Pawn.new(white, self, [1,3])
-        grid[1][4] = Pawn.new(white, self, [1,4])
-        grid[1][5] = Pawn.new(white, self, [1,5])
-        grid[1][6] = Pawn.new(white, self, [1,6])
-        grid[1][7] = Rook.new(white, self, [1,7])
-
-
-        grid[7][0] = Rook.new(black, self, [0,0])
-        grid[7][1] = Knight.new(black, self, [0,1])
-        grid[7][2] = Bishop.new(black, self, [0,2])
-        grid[7][3] = King.new(black, self, [0,3])
-        grid[7][4] = Queen.new(black, self, [0,4])
-        grid[7][5] = Bishop.new(black, self, [0,5])
-        grid[7][6] = Knight.new(black, self, [0,6])
-        grid[7][7] = Rook.new(black, self, [0,7])
-
-        grid[0][0] = Rook.new(black, self, [0,0])
-        grid[0][1] = Knight.new(black, self, [0,1])
-        grid[0][2] = Bishop.new(black, self, [0,2])
-        grid[0][3] = King.new(black, self, [0,3])
-        grid[0][4] = Queen.new(black, self, [0,4])
-        grid[0][5] = Bishop.new(black, self, [0,5])
-        grid[0][6] = Knight.new(black, self, [0,6])
-        grid[0][7] = Rook.new(black, self, [0,7])
-
-
-
-
-
-
-
+        @grid.each_with_index do |el1, i1|
+            @grid.each_with_index do |el2, i2|
+                if i1 == 0
+                    @grid[i1][i2] = last_row[i2].new(:white,self,[i1,i2])
+                elsif i1 == 1
+                    @grid[i1][i2] = many_pawns[i2].new(:white,self,[i1,i2])
+                elsif i1 == 7
+                    @grid[i1][i2] = last_row[i2].new(:black,self,[i1,i2])
+                elsif i1 ==6
+                    @grid[i1][i2] = many_pawns[i2].new(:black,self,[i1,i2])
+                else
+                    @grid[i1][i2] = @null_piece
+                end
+            end
+        end
     end
 
     def render
