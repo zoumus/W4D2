@@ -78,4 +78,3 @@ a = Board.new
 rook = a[[0,0]]
 a.move_piece([0,0],[4,0])
 a.render
-p rook.horizontal
