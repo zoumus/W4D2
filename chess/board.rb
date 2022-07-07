@@ -18,15 +18,15 @@ class Board
         @grid.each_with_index do |el1, i1|
             @grid.each_with_index do |el2, i2|
                 if i1 == 0
-                    @grid[i1][i2] = last_row[i2].new("white",self,[i1,i2]).to_s
+                    @grid[i1][i2] = last_row[i2].new("white",self,[i1,i2])
                 elsif i1 == 1
-                    @grid[i1][i2] = many_pawns[i2].new("white",self,[i1,i2]).to_s
+                    @grid[i1][i2] = many_pawns[i2].new("white",self,[i1,i2])
                 elsif i1 == 7
-                    @grid[i1][i2] = last_row[i2].new("black",self,[i1,i2]).to_s
+                    @grid[i1][i2] = last_row[i2].new("black",self,[i1,i2])
                 elsif i1 ==6
-                    @grid[i1][i2] = many_pawns[i2].new("black",self,[i1,i2]).to_s
+                    @grid[i1][i2] = many_pawns[i2].new("black",self,[i1,i2])
                 else
-                    @grid[i1][i2] = @null_piece.to_s
+                    @grid[i1][i2] = @null_piece
                 end
             end
         end
@@ -35,7 +35,7 @@ class Board
 
     def render
         @grid.each do |arr|
-            p arr
+            p arr.join(" ")
          end
     end
 
@@ -58,19 +58,24 @@ class Board
         start_row, start_col = start_pos
         end_row, end_col = end_pos
 
+        #refer to the specific instance class and using its move to populate slideable/steppable to give us a 2D array of all possible answers. check if end_pos.include?(slideable_array). If yes, then we move position, if not included in the array, we just return an error message.
+
         if !valid_pos?(start_pos) || !valid_pos?(end_pos)
             raise 'not a valid position'
         end
-        if @grid[start_row][start_col].empty? == true
+        if @grid[start_row][start_col].empty? == false
+            @grid[start_row][start_col].pos = end_pos
             @grid[start_row][start_col], @grid[end_row][end_col] = @grid[end_row][end_col], @grid[start_row][start_col]
         else
             raise 'there is no piece in there'
         end
 
-        return @grid[start_row][start_col] = @grid[end_row][start_col]
-
+        @grid[start_row][start_col] = "_"
     end
-
 end
+
 a = Board.new
+rook = a[[0,0]]
+a.move_piece([0,0],[4,0])
 a.render
+p rook.horizontal
