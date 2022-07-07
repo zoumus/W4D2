@@ -13,6 +13,20 @@ class Pawn < Piece
     end
 
     private
-    def move
+    def forward_dir
+        if color == :white
+            return -1
+        else
+            return 1
+        end
+    end
+
+    def at_start_row?
+    end
+
+    def forward_steps
+    end
+
+    def side_attacks
     end
 end
