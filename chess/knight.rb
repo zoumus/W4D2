@@ -1,5 +1,5 @@
 require_relative "piece.rb"
-require_relative "steppabble.rb"
+require_relative "steppable.rb"
 class Knight < Piece
     include Steppable
     attr_reader = :color, :board, :pos
@@ -20,15 +20,15 @@ class Knight < Piece
         # positions = possible_pos
         # arr_moves = [[i+1, j+2], [i+1,j-2], [i-1,j+2], [i-1,j-2], [i+2,j+1], [i+2,j-1], [i-2,j+1], [i-2,j-1]]
         # arr_moves.each do |ele|
-        #     i, j = ele 
+        #     i, j = ele
         #     if positions.include?(ele)
-            
+
         #         if (board.[]([i, j]).is_a?(NullPiece) || board.[]([i, j]).color != self.color)
         #             arr << ele
         #         end
         #     end
         # end
-        # arr 
+        # arr
     end
 
 end
